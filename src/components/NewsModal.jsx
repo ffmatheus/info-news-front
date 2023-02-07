@@ -16,7 +16,7 @@ const NewsModal = ({ active, handleModal, token, id, setErrorMessage }) => {
       const response = await fetch(`http://localhost:8000/news/${id}`, requestOptions);
 
       if (!response.ok) {
-        setErrorMessage("Noticias nao encontradas!");
+        setErrorMessage("Notícias nao encontradas!");
       } else {
         const data = await response.json();
         setTittle(data.tittle);
@@ -49,7 +49,7 @@ const NewsModal = ({ active, handleModal, token, id, setErrorMessage }) => {
     };
     const response = await fetch("http://localhost:8000/news", requestOptions);
     if (!response.ok) {
-      setErrorMessage("Erro ao criar noticia");
+      setErrorMessage("Erro ao criar notícia");
     } else {
       cleanFormData();
       handleModal();
@@ -71,7 +71,7 @@ const NewsModal = ({ active, handleModal, token, id, setErrorMessage }) => {
     };
     const response = await fetch(`http://localhost:8000/news/${id}`, requestOptions);
     if (!response.ok) {
-      setErrorMessage("Erro ao atualizar noticia");
+      setErrorMessage("Erro ao atualizar notícia");
     } else {
       cleanFormData();
       handleModal();
@@ -84,17 +84,17 @@ const NewsModal = ({ active, handleModal, token, id, setErrorMessage }) => {
       <div className="modal-card">
         <header className="modal-card-head has-background-primary-light">
           <h1 className="modal-card-title">
-            {id ? "Atualizar Noticia" : "Criar Noticia"}
+            {id ? "Atualizar Notícia" : "Criar Notícia"}
           </h1>
         </header>
         <section className="modal-card-body">
           <form>
             <div className="field">
-              <label className="label">Titulo</label>
+              <label className="label">Título</label>
               <div className="control">
                 <input
                   type="text"
-                  placeholder="Titulo"
+                  placeholder="Título"
                   value={tittle}
                   onChange={(e) => setTittle(e.target.value)}
                   className="input"
@@ -103,11 +103,11 @@ const NewsModal = ({ active, handleModal, token, id, setErrorMessage }) => {
               </div>
             </div>
             <div className="field">
-              <label className="label">Conteudo</label>
+              <label className="label">Conteúdo</label>
               <div className="control">
                 <input
                   type="text"
-                  placeholder="Conteudo"
+                  placeholder="Conteúdo"
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
                   className="input"
@@ -119,15 +119,15 @@ const NewsModal = ({ active, handleModal, token, id, setErrorMessage }) => {
         </section>
         <footer className="modal-card-foot has-background-primary-light">
           {id ? (
-            <button className="button is-info" onClick={handleUpdateNews}>
+            <button className="confirm" onClick={handleUpdateNews}>
               Atualizar
             </button>
           ) : (
-            <button className="button is-primary" onClick={handleCreateNews}>
+            <button className="confirm" onClick={handleCreateNews}>
               Criar
             </button>
           )}
-          <button className="button" onClick={handleModal}>
+          <button className="cancel" onClick={handleModal}>
             Cancelar
           </button>
         </footer>

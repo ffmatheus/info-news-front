@@ -22,7 +22,6 @@ const Login = () => {
     if (!response.ok) {
       setErrorMessage(data.detail);
     } else {
-      console.log(data.token)
       setToken(data.token);
     }
   };
@@ -37,11 +36,11 @@ const Login = () => {
       <form className="box" onSubmit={handleSubmit}>
         <h1 className="title has-text-centered">Login</h1>
         <div className="field">
-          <label className="label">Email Address</label>
+          <label className="label">Email</label>
           <div className="control">
             <input
               type="email"
-              placeholder="Enter email"
+              placeholder="Email"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="input"
@@ -64,9 +63,11 @@ const Login = () => {
         </div>
         <ErrorMessage message={errorMessage} />
         <br />
-        <button className="button is-primary" type="submit">
+        <div class="wrapper">
+        <button className="home" type="submit">
           Login
         </button>
+        </div>
       </form>
     </div>
   );

@@ -1,0 +1,17 @@
+.header {
+  overflow: hidden;
+  background-color: #261bbb;
+  padding: 20px 10px;
+}
+
+.header-right {
+  float: right;
+}
+
+.text {
+  padding: 25px 30px;
+  background: none;
+  color: aliceblue;
+  font-size: xx-large;
+  text-align: center;
+} 

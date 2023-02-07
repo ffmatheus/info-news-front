@@ -3,7 +3,7 @@ import React, { createContext, useEffect, useState } from "react";
 export const UserContext = createContext();
 
 export const UserProvider = (props) => {
-  const [token, setToken] = useState(localStorage.getItem("awesomeLeadsToken"));
+  const [token, setToken] = useState(localStorage.getItem("NewsToken"));
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -15,12 +15,12 @@ export const UserProvider = (props) => {
         },
       };
 
-      const response = await fetch("/api/users/me", requestOptions);
+      const response = await fetch("http://localhost:8000/news", requestOptions);
 
       if (!response.ok) {
         setToken(null);
       }
-      localStorage.setItem("awesomeLeadsToken", token);
+      localStorage.setItem("NewsToken", token);
     };
     fetchUser();
   }, [token]);

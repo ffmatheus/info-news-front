@@ -28,7 +28,7 @@ const Table = () => {
     };
     const response = await fetch(`http://localhost:8000/news/${id}`, requestOptions);
     if (!response.ok) {
-      setErrorMessage("Erro ao deletar noticia");
+      setErrorMessage("Erro ao deletar notícia");
     }
 
     getNews();
@@ -44,7 +44,7 @@ const Table = () => {
     };
     const response = await fetch("http://localhost:8000/news", requestOptions);
     if (!response.ok) {
-      setErrorMessage("Erro ao carregar noticias");
+      setErrorMessage("Erro ao carregar notícias");
     } else {
       const data = await response.json();
       setNews(data.data);
@@ -71,20 +71,22 @@ const Table = () => {
         id={id}
         setErrorMessage={setErrorMessage}
       />
-      <button
-        className="button is-fullwidth mb-5 is-primary"
-        onClick={() => setActiveModal(true)}
-      >
-        Criar noticia
-      </button>
+      <div class="wrapper">
+        <button
+          className="create"
+          onClick={() => setActiveModal(true)}
+        >
+          Criar notícia
+        </button>
+      </div>
       <ErrorMessage message={errorMessage} />
       {loaded && news ? (
         <table className="table is-fullwidth">
           <thead>
             <tr>
-              <th>Titulo</th>
-              <th>Conteudo</th>
-              <th>Data de criacao</th>
+              <th>Título</th>
+              <th>Conteúdo</th>
+              <th>Data de criação</th>
             </tr>
           </thead>
           <tbody>

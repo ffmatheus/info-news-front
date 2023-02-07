@@ -27,7 +27,7 @@ const Register = () => {
     if (!response.ok) {
       setErrorMessage(data.detail);
     } else {
-      setSuccessMessage("Usuario criado com sucesso!");
+      setSuccessMessage("Usuário criado com sucesso!");
     }
   };
 
@@ -45,7 +45,7 @@ const Register = () => {
   return (
     <div className="column">
       <form className="box" onSubmit={handleSubmit}>
-        <h1 className="title has-text-centered">Criar usuario</h1>
+        <h1 className="title has-text-centered">Criar usuário</h1>
         <div className="field">
           <label className="label">Nome Completo</label>
           <div className="control">
@@ -101,9 +101,11 @@ const Register = () => {
         <ErrorMessage message={errorMessage} />
         <SuccessMessage message={successmessage}/>
         <br />
-        <button className="button is-primary" type="submit">
-          Cadastrar
-        </button>
+        <div class="wrapper">
+          <button className="home" type="submit">
+            Cadastrar
+          </button>
+        </div>
       </form>
     </div>
   );
