@@ -2,7 +2,7 @@
 
 # First look
 
-![First Look](./firstlook.png)
+![First Look](./first_look.png)
 
 # Getting Started with Create React App
 
